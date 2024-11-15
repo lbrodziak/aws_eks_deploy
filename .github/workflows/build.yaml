@@ -14,12 +14,12 @@ jobs:
     - name: install the gcloud
       uses: google-github-actions/setup-gcloud@v2.1.2
       with:
-        project_id: $PROJECT_ID
+        project_id: probable-maker-440522-s2
         service_account_key: ${{ secrets.GCP_CREDENTIALS }}
         export_default_credentials: true
     - name: build and push the docker image
       env:
-        GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
+        GOOGLE_PROJECT: probable-maker-440522-s2
       run:
         gcloud auth configure-docker us-west1-docker.pkg.dev
         docker build -t us-west1-docker.pkg.dev/probable-maker-440522-s2/my-project/my-app:latest .
