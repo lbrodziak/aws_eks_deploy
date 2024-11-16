@@ -21,6 +21,6 @@ jobs:
       env:
         GOOGLE_PROJECT: probable-maker-440522-s2
       run: |
-        gcloud auth configure-docker us-west1-docker.pkg.dev
+        gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin us-west1-docker.pkg.dev
         docker build -t us-west1-docker.pkg.dev/probable-maker-440522-s2/my-project/my-app:latest .
         docker push us-west1-docker.pkg.dev/probable-maker-440522-s2/my-project/my-app:latest
