@@ -15,7 +15,7 @@ jobs:
       uses: google-github-actions/setup-gcloud@v1
       with:
         project_id: probable-maker-440522-s2
-        service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        service_account_key: ${{ secrets.CREDENTIALS }}
         
     - name: Authenticate to Google Container Registry and push
       run: |
