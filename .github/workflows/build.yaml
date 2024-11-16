@@ -19,6 +19,6 @@ jobs:
         
     - name: Authenticate to Google Container Registry and push
       run: |
-        gcloud auth configure-docker us-west1-docker.pkg.dev
-        docker build -t us-west1-docker.pkg.dev/probable-maker-440522-s2/my-project/app:latest .
-        docker push us-west1-docker.pkg.dev/probable-maker-440522-s2/my-project/app:latest
+        gcloud auth configure-docker us-central1-docker.pkg.dev
+        docker build -t us-central1-docker.pkg.dev/probable-maker-440522-s2/demoapp:latest .
+        docker push us-central1-docker.pkg.dev/probable-maker-440522-s2/demoapp:latest
