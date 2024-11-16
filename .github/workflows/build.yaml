@@ -19,12 +19,12 @@ jobs:
         
     - name: Authenticate to Google Container Registry
       run: |
-        gloud auth configure-docker us-west1-docker.pkg.dev
+        gcloud auth configure-docker us-west1-docker.pkg.dev
     - name: Build the Docker Image
       run: |
           docker build -t us-west1-docker.pkg.dev/probable-maker-440522-s2/my-project/my-app:latest .
     
     - name: build and push the docker image
       run: |
-       gloud auth configure-docker us-west1-docker.pkg.dev
+       gcloud auth configure-docker us-west1-docker.pkg.dev
        docker push us-west1-docker.pkg.dev/probable-maker-440522-s2/my-project/my-app:latest
