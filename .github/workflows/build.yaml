@@ -1,25 +1,17 @@
 name: deploy project
 
 on:
-  push:
-    branches:
-    - 'main'
+  [workflow_dispatch]
 
 jobs:
-  deploy:
+  publish_images:
     runs-on: ubuntu-latest
     steps:
     - name: code checkout
-      uses: actions/checkout@v2
-    - name: install the gcloud
-      uses: google-github-actions/setup-gcloud@v1
-      with:
-        project_id: probable-maker-440522-s2
-        service_account_key: ${{ secrets.CREDENTIALS }}
-        
-    - name: Authenticate to Google Container Registry and push
+      uses: actions/checkout@v4
+    - name: build image
+      run: docker build . -t my-app:latest
+    - name: push image
       run: |
-        gcloud auth configure-docker us-central1-docker.pkg.dev
-        docker build -t us-central1-docker.pkg.dev/probable-maker-440522-s2/demo/app:latest .
-        gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://us-central1-docker.pkg.dev
-        docker push us-central1-docker.pkg.dev/probable-maker-440522-s2/demo/app:latest
+        docker push my-app:latest
+      
