@@ -102,7 +102,7 @@ module "eks" {
       min_size       = 1                # Minimum number of nodes
       max_size       = 1                # Maximum number of nodes
       desired_size   = 1                # Desired number of nodes
-      instance_types = ["t3.medium"]    # Instance type for worker nodes
+      instance_types = ["t3.micro"]    # Instance type for worker nodes
     }
   }
 }
