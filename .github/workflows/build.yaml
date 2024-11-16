@@ -20,5 +20,5 @@ jobs:
     - name: Authenticate to Google Container Registry
       run: |
         gcloud auth configure-docker us-west1-docker.pkg.dev
-        docker build -t my-app:latest .
-        docker push gcr.io/probable-maker-440522-s2/my-project/my-app:latest
+        docker build -t us-west1-docker.pkg.dev/probable-maker-440522-s2/my-project/my-app:latest .
+        docker push us-west1-docker.pkg.dev/probable-maker-440522-s2/my-project/my-app:latest
