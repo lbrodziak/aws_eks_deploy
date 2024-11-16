@@ -17,7 +17,7 @@ jobs:
         project_id: probable-maker-440522-s2
         service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         
-    - name: Authenticate to Google Container Registry
+    - name: Authenticate to Google Container Registry and push
       run: |
         gcloud auth configure-docker us-west1-docker.pkg.dev
         docker build -t us-west1-docker.pkg.dev/probable-maker-440522-s2/my-project/app:latest .
