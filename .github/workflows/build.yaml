@@ -10,9 +10,9 @@ jobs:
     - name: code checkout
       uses: actions/checkout@v4
     - name: build image
-      run: docker build . -t my-app:latest
+      run: docker build . -t lbrodziak/my-app:latest
     - name: push image
       run: |
         docker login -u lbrodziak -p ${{ secrets.DOCKER_HUB_TOKEN }}
-        docker push my-app:latest
+        docker push lbrodziak/my-app:latest
       
