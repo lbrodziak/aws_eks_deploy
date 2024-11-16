@@ -13,5 +13,6 @@ jobs:
       run: docker build . -t my-app:latest
     - name: push image
       run: |
+        docker login -u lbrodziak -p ${{ secrets.DOCKER_HUB_TOKEN }}
         docker push my-app:latest
       
