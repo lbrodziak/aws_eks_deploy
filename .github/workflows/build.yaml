@@ -26,4 +26,4 @@ jobs:
     
     - name: build and push the docker image
       run: |
-        gcloud container images push gcr.io/probable-maker-440522-s2/my-project/my-app:latest
+       docker push us-west1-docker.pkg.dev/probable-maker-440522-s2/my-project/my-app:latest
